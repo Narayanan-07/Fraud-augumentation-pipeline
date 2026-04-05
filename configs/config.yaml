@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────
+# Fraud Augmentation Pipeline — Config
+# All paths and parameters live here only
+# ─────────────────────────────────────────
+
+kafka:
+  broker: "localhost:9092"
+  topic: "fraud-stream"
+  group_id: "fraud-consumer-group"
+  auto_offset_reset: "earliest"
+  records_per_second: 50       # Producer replay speed
+  batch_interval_seconds: 10   # Spark micro-batch interval
+
+paths:
+  raw_data: "data/raw/creditcard.csv"
+  sample_data: "data/sample/sample_100.csv"
+  processed_dir: "data/processed/"
+  augmented_dir: "data/augmented/"
+  ctgan_model: "data/models/ctgan_model.pkl"
+  scaler_model: "data/models/scaler.pkl"
+  results_dir: "evaluation/results/"
+
+augmentation:
+  minority_class: 1
+  synthetic_ratio: 2.0        # Generate 2x the minority samples per batch
+  method: "ctgan"             # Options: ctgan, smote, none
+  min_samples_to_augment: 5   # Skip augmentation if fewer minority rows in batch
+
+model:
+  test_size: 0.2
+  random_state: 42
+  classifiers:
+    - "random_forest"
+    - "xgboost"
+    - "logistic_regression"
+
+pipeline:
+  spark_app_name: "FraudAugmentationPipeline"
+  spark_master: "local[*]"
+  checkpoint_dir: "tmp/spark_checkpoint/"
+  log_level: "WARN"
+
+evaluation:
+  metrics:
+    - "f1_macro"
+    - "f1_minority"
+    - "roc_auc"
+    - "precision"
+    - "recall"
+    - "confusion_matrix"
+  baseline_label: "no_augmentation"
+  compare_labels:
+    - "smote"
+    - "ctgan"
