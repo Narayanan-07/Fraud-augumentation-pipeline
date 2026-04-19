@@ -1,0 +1,17 @@
+FROM python:3.10-slim
+
+# Java for PySpark (FIXED to use default-jre)
+RUN apt-get update && apt-get install -y \
+    default-jre \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/default-java
+ENV PATH=$PATH:$JAVA_HOME/bin
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --upgrade pip wheel "setuptools<82"
+RUN pip install --no-cache-dir --prefer-binary -v -r requirements.txt
+COPY . .
+ENV PYTHONPATH=/app

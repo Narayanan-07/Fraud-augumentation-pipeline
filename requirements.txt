@@ -1,0 +1,24 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+pyspark==3.5.1
+kafka-python==2.0.2
+sdv
+imbalanced-learn
+ctgan
+scikit-learn
+xgboost
+pandas
+numpy
+pyarrow
+fastparquet
+streamlit
+plotly
+streamlit-autorefresh
+matplotlib
+seaborn
+pyyaml
+psutil
+python-dotenv
+tqdm
+jupyterlab
+ipykernel

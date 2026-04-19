@@ -1,0 +1,116 @@
+[
+    {
+        "model": "random_forest",
+        "data_source": "baseline",
+        "f1_macro": 0.9190516246405447,
+        "f1_minority": 0.8387096774193549,
+        "precision": 0.9285714285714286,
+        "recall": 0.7647058823529411,
+        "roc_auc": 0.9694891302796295,
+        "confusion_matrix": [
+            [
+                4120,
+                1
+            ],
+            [
+                4,
+                13
+            ]
+        ]
+    },
+    {
+        "model": "xgboost",
+        "data_source": "baseline",
+        "f1_macro": 0.8996361872422993,
+        "f1_minority": 0.8,
+        "precision": 0.9230769230769231,
+        "recall": 0.7058823529411765,
+        "roc_auc": 0.9977161454244402,
+        "confusion_matrix": [
+            [
+                4120,
+                1
+            ],
+            [
+                5,
+                12
+            ]
+        ]
+    },
+    {
+        "model": "logistic_regression",
+        "data_source": "baseline",
+        "f1_macro": 0.8818676220791641,
+        "f1_minority": 0.7647058823529411,
+        "precision": 0.7647058823529411,
+        "recall": 0.7647058823529411,
+        "roc_auc": 0.9413477596814023,
+        "confusion_matrix": [
+            [
+                4117,
+                4
+            ],
+            [
+                4,
+                13
+            ]
+        ]
+    },
+    {
+        "model": "random_forest",
+        "data_source": "augmented",
+        "f1_macro": 0.9808948838208442,
+        "f1_minority": 0.9622641509433962,
+        "precision": 0.9444444444444444,
+        "recall": 0.9807692307692307,
+        "roc_auc": 0.9900403130187337,
+        "confusion_matrix": [
+            [
+                4214,
+                3
+            ],
+            [
+                1,
+                51
+            ]
+        ]
+    },
+    {
+        "model": "xgboost",
+        "data_source": "augmented",
+        "f1_macro": 0.9801550776782975,
+        "f1_minority": 0.9607843137254902,
+        "precision": 0.98,
+        "recall": 0.9423076923076923,
+        "roc_auc": 0.9950019153244195,
+        "confusion_matrix": [
+            [
+                4216,
+                1
+            ],
+            [
+                3,
+                49
+            ]
+        ]
+    },
+    {
+        "model": "logistic_regression",
+        "data_source": "augmented",
+        "f1_macro": 0.948888775209222,
+        "f1_minority": 0.8990825688073395,
+        "precision": 0.8596491228070176,
+        "recall": 0.9423076923076923,
+        "roc_auc": 0.9983582933547362,
+        "confusion_matrix": [
+            [
+                4209,
+                8
+            ],
+            [
+                3,
+                49
+            ]
+        ]
+    }
+]
