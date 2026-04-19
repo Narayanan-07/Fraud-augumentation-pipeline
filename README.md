@@ -68,6 +68,11 @@ fraud-augmentation-pipeline/
 ├── requirements.txt          # All Python dependencies
 └── .gitignore                # Ignores data/raw, data/processed, data/augmented, models
 ```
+---
+
+## 🏗️ Architecture
+
+![Fraud Augmentation Architecture](docs/Fraud%20Augumentation%20Architecture.png)
 
 ---
 
@@ -153,3 +158,7 @@ CTGAN consistently achieves the best minority-class F1 score.
 ## 📚 Acknowledgments
 
 This project is based on the paper: *Generative AI for Real-Time Data Augmentation in Big Data Pipelines, CE2CT 2025*.
+
+---
+
+
